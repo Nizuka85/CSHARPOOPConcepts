@@ -33,7 +33,7 @@
             txtPassword = new TextBox();
             label2 = new Label();
             btnExit = new Button();
-            button1 = new Button();
+            btnLogin = new Button();
             SuspendLayout();
             // 
             // label1
@@ -82,22 +82,23 @@
             btnExit.UseVisualStyleBackColor = true;
             btnExit.Click += btnExit_Click;
             // 
-            // button1
+            // btnLogin
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(194, 159);
-            button1.Name = "button1";
-            button1.Size = new Size(126, 47);
-            button1.TabIndex = 2;
-            button1.Text = "Enter";
-            button1.UseVisualStyleBackColor = true;
+            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.Location = new Point(194, 159);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(126, 47);
+            btnLogin.TabIndex = 2;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(368, 260);
-            Controls.Add(button1);
+            Controls.Add(btnLogin);
             Controls.Add(btnExit);
             Controls.Add(txtPassword);
             Controls.Add(label2);
@@ -116,6 +117,6 @@
         private TextBox txtPassword;
         private Label label2;
         private Button btnExit;
-        private Button button1;
+        private Button btnLogin;
     }
 }

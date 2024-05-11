@@ -1,6 +1,6 @@
 ﻿namespace PersonalTracking
 {
-    partial class FormDepartmentList
+    partial class FormPositionList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            panel1 = new Panel();
             btnNew = new Button();
             btnUpDate = new Button();
             btnDelete = new Button();
             btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            flowLayoutPanel1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -44,25 +44,25 @@
             dataGridView1.Dock = DockStyle.Top;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(426, 374);
+            dataGridView1.Size = new Size(465, 237);
             dataGridView1.TabIndex = 0;
             // 
-            // flowLayoutPanel1
+            // panel1
             // 
-            flowLayoutPanel1.Controls.Add(btnNew);
-            flowLayoutPanel1.Controls.Add(btnUpDate);
-            flowLayoutPanel1.Controls.Add(btnDelete);
-            flowLayoutPanel1.Controls.Add(btnClose);
-            flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(0, 380);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(426, 62);
-            flowLayoutPanel1.TabIndex = 1;
+            panel1.Controls.Add(btnNew);
+            panel1.Controls.Add(btnUpDate);
+            panel1.Controls.Add(btnDelete);
+            panel1.Controls.Add(btnClose);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 235);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(465, 77);
+            panel1.TabIndex = 1;
             // 
             // btnNew
             // 
             btnNew.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNew.Location = new Point(3, 3);
+            btnNew.Location = new Point(27, 17);
             btnNew.Name = "btnNew";
             btnNew.Size = new Size(98, 42);
             btnNew.TabIndex = 0;
@@ -73,7 +73,7 @@
             // btnUpDate
             // 
             btnUpDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpDate.Location = new Point(107, 3);
+            btnUpDate.Location = new Point(131, 17);
             btnUpDate.Name = "btnUpDate";
             btnUpDate.Size = new Size(98, 42);
             btnUpDate.TabIndex = 1;
@@ -84,7 +84,7 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(211, 3);
+            btnDelete.Location = new Point(235, 17);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(98, 42);
             btnDelete.TabIndex = 2;
@@ -94,7 +94,7 @@
             // btnClose
             // 
             btnClose.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnClose.Location = new Point(315, 3);
+            btnClose.Location = new Point(339, 17);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(98, 42);
             btnClose.TabIndex = 3;
@@ -102,24 +102,25 @@
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
-            // FormDepartmentList
+            // FormPositionList
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(426, 442);
-            Controls.Add(flowLayoutPanel1);
+            ClientSize = new Size(465, 312);
+            Controls.Add(panel1);
             Controls.Add(dataGridView1);
-            Name = "FormDepartmentList";
+            Name = "FormPositionList";
             StartPosition = FormStartPosition.CenterScreen;
+            Text = "Position List";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            flowLayoutPanel1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private DataGridView dataGridView1;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel panel1;
         private Button btnNew;
         private Button btnUpDate;
         private Button btnDelete;

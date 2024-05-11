@@ -10,21 +10,40 @@ using System.Windows.Forms;
 
 namespace PersonalTracking
 {
-    public partial class FormDepartmentList : Form
+    public partial class FormTaskList : Form
     {
-        public FormDepartmentList()
+        public FormTaskList()
         {
             InitializeComponent();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUserNo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = General.isNumber(e);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        private void FormTaskList_Load(object sender, EventArgs e)
+        {
+            pnlForAdmin.Hide();
+        }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            FormDepartment form = new FormDepartment();
+            FormTask form = new FormTask();
             this.Hide();
             form.ShowDialog();
             this.Visible = true;
@@ -32,7 +51,7 @@ namespace PersonalTracking
 
         private void btnUpDate_Click(object sender, EventArgs e)
         {
-            FormDepartment form = new FormDepartment();
+            FormTask form = new FormTask();
             this.Hide();
             form.ShowDialog();
             this.Visible = true;

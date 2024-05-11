@@ -50,6 +50,7 @@
             button1.Text = "Employee";
             button1.TextAlign = ContentAlignment.BottomCenter;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -63,6 +64,7 @@
             button2.Text = "Tasks";
             button2.TextAlign = ContentAlignment.BottomCenter;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // btnSalary
             // 
@@ -76,6 +78,7 @@
             btnSalary.Text = "Salary";
             btnSalary.TextAlign = ContentAlignment.BottomCenter;
             btnSalary.UseVisualStyleBackColor = false;
+            btnSalary.Click += btnSalary_Click;
             // 
             // btnPermission
             // 
@@ -89,6 +92,7 @@
             btnPermission.Text = "Permission";
             btnPermission.TextAlign = ContentAlignment.BottomCenter;
             btnPermission.UseVisualStyleBackColor = false;
+            btnPermission.Click += btnPermission_Click;
             // 
             // btnDepartment
             // 
@@ -102,6 +106,7 @@
             btnDepartment.Text = "Department";
             btnDepartment.TextAlign = ContentAlignment.BottomCenter;
             btnDepartment.UseVisualStyleBackColor = false;
+            btnDepartment.Click += btnDepartment_Click;
             // 
             // btnPosition
             // 
@@ -115,6 +120,7 @@
             btnPosition.Text = "Position";
             btnPosition.TextAlign = ContentAlignment.BottomCenter;
             btnPosition.UseVisualStyleBackColor = false;
+            btnPosition.Click += btnPosition_Click;
             // 
             // btnLogOut
             // 
@@ -128,6 +134,7 @@
             btnLogOut.Text = "LogOut";
             btnLogOut.TextAlign = ContentAlignment.BottomCenter;
             btnLogOut.UseVisualStyleBackColor = false;
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // btnExit
             // 
@@ -158,6 +165,7 @@
             Controls.Add(button1);
             Name = "FormMain";
             Text = "Employee Tracking";
+            FormClosed += FormMain_FormClosed;
             ResumeLayout(false);
         }
 
