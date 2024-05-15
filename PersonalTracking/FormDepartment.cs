@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +22,14 @@ namespace PersonalTracking
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            var txt = txtDepartment.Text;
+            Department d = new Department();
+            d.DepartmentName = txt;
+            DepartmenBLL.AddDepartment(d);
         }
     }
 }
