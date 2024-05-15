@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonalTracking", "PersonalTracking.csproj", "{D427EC4E-D968-4CE5-9842-E9AAA4D2650A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonalTracking", "PersonalTracking.csproj", "{D427EC4E-D968-4CE5-9842-E9AAA4D2650A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "..\BLL\BLL.csproj", "{8D15187E-7B15-4C00-9677-FE23B51B2146}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{276F5993-1F89-4E60-AE1F-2EBD46424EE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "..\DAL\DAL.csproj", "{EF577ED1-D97A-4D79-8C25-3049E9ED1108}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{8D15187E-7B15-4C00-9677-FE23B51B2146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D15187E-7B15-4C00-9677-FE23B51B2146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D15187E-7B15-4C00-9677-FE23B51B2146}.Release|Any CPU.Build.0 = Release|Any CPU
-		{276F5993-1F89-4E60-AE1F-2EBD46424EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{276F5993-1F89-4E60-AE1F-2EBD46424EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{276F5993-1F89-4E60-AE1F-2EBD46424EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{276F5993-1F89-4E60-AE1F-2EBD46424EE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF577ED1-D97A-4D79-8C25-3049E9ED1108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF577ED1-D97A-4D79-8C25-3049E9ED1108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF577ED1-D97A-4D79-8C25-3049E9ED1108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF577ED1-D97A-4D79-8C25-3049E9ED1108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
