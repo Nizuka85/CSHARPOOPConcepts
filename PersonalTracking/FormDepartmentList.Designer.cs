@@ -57,7 +57,7 @@
             flowLayoutPanel1.Controls.Add(btnDelete);
             flowLayoutPanel1.Controls.Add(btnClose);
             flowLayoutPanel1.Dock = DockStyle.Bottom;
-            flowLayoutPanel1.Location = new Point(0, 506);
+            flowLayoutPanel1.Location = new Point(0, 398);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(487, 83);
@@ -114,12 +114,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(487, 589);
+            ClientSize = new Size(487, 481);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(dataGridView1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormDepartmentList";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
+            Text = "Department List";
             Load += FormDepartmentList_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             flowLayoutPanel1.ResumeLayout(false);

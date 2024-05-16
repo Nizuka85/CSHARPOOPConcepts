@@ -31,26 +31,27 @@
             textBox1 = new TextBox();
             txtPosition = new Label();
             label1 = new Label();
-            cmdDepartment = new TextBox();
             btnClose = new Button();
             btnSave = new Button();
+            cmbDepartment = new ComboBox();
             SuspendLayout();
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(143, 43);
+            textBox1.Location = new Point(163, 57);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(146, 29);
+            textBox1.Size = new Size(166, 34);
             textBox1.TabIndex = 1;
             // 
             // txtPosition
             // 
             txtPosition.AutoSize = true;
             txtPosition.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPosition.Location = new Point(39, 41);
+            txtPosition.Location = new Point(45, 55);
             txtPosition.Name = "txtPosition";
-            txtPosition.Size = new Size(68, 21);
+            txtPosition.Size = new Size(85, 28);
             txtPosition.TabIndex = 0;
             txtPosition.Text = "Position";
             // 
@@ -58,26 +59,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(39, 107);
+            label1.Location = new Point(35, 143);
             label1.Name = "label1";
-            label1.Size = new Size(98, 21);
+            label1.Size = new Size(122, 28);
             label1.TabIndex = 0;
             label1.Text = "Department";
-            // 
-            // cmdDepartment
-            // 
-            cmdDepartment.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmdDepartment.Location = new Point(143, 104);
-            cmdDepartment.Name = "cmdDepartment";
-            cmdDepartment.Size = new Size(146, 29);
-            cmdDepartment.TabIndex = 2;
             // 
             // btnClose
             // 
             btnClose.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnClose.Location = new Point(243, 179);
+            btnClose.Location = new Point(278, 239);
+            btnClose.Margin = new Padding(3, 4, 3, 4);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(71, 29);
+            btnClose.Size = new Size(81, 39);
             btnClose.TabIndex = 5;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
@@ -86,27 +80,38 @@
             // btnSave
             // 
             btnSave.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSave.Location = new Point(139, 179);
+            btnSave.Location = new Point(159, 239);
+            btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(75, 29);
+            btnSave.Size = new Size(86, 39);
             btnSave.TabIndex = 4;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
             // 
+            // cmbDepartment
+            // 
+            cmbDepartment.FormattingEnabled = true;
+            cmbDepartment.Location = new Point(163, 143);
+            cmbDepartment.Name = "cmbDepartment";
+            cmbDepartment.Size = new Size(166, 28);
+            cmbDepartment.TabIndex = 6;
+            // 
             // FormPosition
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(363, 260);
+            ClientSize = new Size(415, 347);
+            Controls.Add(cmbDepartment);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(label1);
-            Controls.Add(cmdDepartment);
             Controls.Add(txtPosition);
             Controls.Add(textBox1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormPosition";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Position";
+            Load += FormPosition_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -116,8 +121,8 @@
         private TextBox textBox1;
         private Label txtPosition;
         private Label label1;
-        private TextBox cmdDepartment;
         private Button btnClose;
         private Button btnSave;
+        private ComboBox cmbDepartment;
     }
 }
