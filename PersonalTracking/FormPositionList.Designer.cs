@@ -40,11 +40,14 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Top;
             dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(465, 237);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(531, 316);
             dataGridView1.TabIndex = 0;
             // 
             // panel1
@@ -54,17 +57,19 @@
             panel1.Controls.Add(btnDelete);
             panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 235);
+            panel1.Location = new Point(0, 313);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(465, 77);
+            panel1.Size = new Size(531, 103);
             panel1.TabIndex = 1;
             // 
             // btnNew
             // 
             btnNew.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNew.Location = new Point(27, 17);
+            btnNew.Location = new Point(31, 23);
+            btnNew.Margin = new Padding(3, 4, 3, 4);
             btnNew.Name = "btnNew";
-            btnNew.Size = new Size(98, 42);
+            btnNew.Size = new Size(112, 56);
             btnNew.TabIndex = 0;
             btnNew.Text = "New";
             btnNew.UseVisualStyleBackColor = true;
@@ -73,9 +78,10 @@
             // btnUpDate
             // 
             btnUpDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpDate.Location = new Point(131, 17);
+            btnUpDate.Location = new Point(150, 23);
+            btnUpDate.Margin = new Padding(3, 4, 3, 4);
             btnUpDate.Name = "btnUpDate";
-            btnUpDate.Size = new Size(98, 42);
+            btnUpDate.Size = new Size(112, 56);
             btnUpDate.TabIndex = 1;
             btnUpDate.Text = "UpDate";
             btnUpDate.UseVisualStyleBackColor = true;
@@ -84,9 +90,10 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(235, 17);
+            btnDelete.Location = new Point(269, 23);
+            btnDelete.Margin = new Padding(3, 4, 3, 4);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(98, 42);
+            btnDelete.Size = new Size(112, 56);
             btnDelete.TabIndex = 2;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -94,9 +101,10 @@
             // btnClose
             // 
             btnClose.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnClose.Location = new Point(339, 17);
+            btnClose.Location = new Point(387, 23);
+            btnClose.Margin = new Padding(3, 4, 3, 4);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(98, 42);
+            btnClose.Size = new Size(112, 56);
             btnClose.TabIndex = 3;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
@@ -104,14 +112,16 @@
             // 
             // FormPositionList
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(465, 312);
+            ClientSize = new Size(531, 416);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormPositionList";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Position List";
+            Load += FormPositionList_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);

@@ -11,13 +11,7 @@
 
 namespace DAL
 {
-	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
-	using System.Data;
-	using System.Collections.Generic;
-	using System.Reflection;
-	using System.Linq;
-	using System.Linq.Expressions;
 	using System.ComponentModel;
 	using System;
 	
@@ -256,7 +250,7 @@ namespace DAL
 		
 		private int _ID;
 		
-		private string _SatateName;
+		private string _StateName;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -298,15 +292,15 @@ namespace DAL
 		{
 			get
 			{
-				return this._SatateName;
+				return this._StateName;
 			}
 			set
 			{
-				if ((this._SatateName != value))
+				if ((this._StateName != value))
 				{
 					this.OnSatateNameChanging(value);
 					this.SendPropertyChanging();
-					this._SatateName = value;
+					this._StateName = value;
 					this.SendPropertyChanged("SatateName");
 					this.OnSatateNameChanged();
 				}

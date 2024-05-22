@@ -29,7 +29,7 @@ namespace PersonalTracking
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormEmployee form = new FormEmployee();
+            FormEmployeeList form = new FormEmployeeList();
             this.Hide();
             form.ShowDialog();
             this.Visible = true;

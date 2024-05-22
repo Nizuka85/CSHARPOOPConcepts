@@ -48,10 +48,27 @@
   <ItemGroup>
     <Compile Include="DAO\DepartmentDAO.cs" />
     <Compile Include="DAO\EmployeeContext.cs" />
+    <Compile Include="DAO\employeeDAO.cs" />
+    <Compile Include="DAO\TaskDAO.cs" />
+    <Compile Include="DTO\EmployeeDetailDTO.cs" />
+    <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\PositionDTO.cs" />
+    <Compile Include="DTO\TaskDetailDTO.cs" />
+    <Compile Include="DTO\TaskDTO.cs" />
     <Compile Include="EmployeeDataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeDataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="PERSONELTRACKINGDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PERSONELTRACKINGDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PERSONELTRACKINGDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PERSONELTRACKINGDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="PositionDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,9 +78,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DTO\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="EmployeeDataClasses1.dbml">
@@ -73,6 +88,28 @@
     </None>
     <None Include="EmployeeDataClasses1.dbml.layout">
       <DependentUpon>EmployeeDataClasses1.dbml</DependentUpon>
+    </None>
+    <None Include="PERSONELTRACKINGDataSet.xsc">
+      <DependentUpon>PERSONELTRACKINGDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PERSONELTRACKINGDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PERSONELTRACKINGDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PERSONELTRACKINGDataSet.xss">
+      <DependentUpon>PERSONELTRACKINGDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PERSONELTRACKINGDataSet1.xsc">
+      <DependentUpon>PERSONELTRACKINGDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PERSONELTRACKINGDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PERSONELTRACKINGDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PERSONELTRACKINGDataSet1.xss">
+      <DependentUpon>PERSONELTRACKINGDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
