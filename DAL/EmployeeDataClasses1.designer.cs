@@ -258,8 +258,8 @@ namespace DAL
     partial void OnCreated();
     partial void OnIDChanging(int value);
     partial void OnIDChanged();
-    partial void OnSatateNameChanging(string value);
-    partial void OnSatateNameChanged();
+    partial void OnStateNameChanging(string value);
+    partial void OnStateNameChanged();
     #endregion
 		
 		public TASKSTATE()
@@ -287,8 +287,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SatateName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string SatateName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StateName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string StateName
 		{
 			get
 			{
@@ -298,11 +298,11 @@ namespace DAL
 			{
 				if ((this._StateName != value))
 				{
-					this.OnSatateNameChanging(value);
+					this.OnStateNameChanging(value);
 					this.SendPropertyChanging();
 					this._StateName = value;
-					this.SendPropertyChanged("SatateName");
-					this.OnSatateNameChanged();
+					this.SendPropertyChanged("StateName");
+					this.OnStateNameChanged();
 				}
 			}
 		}

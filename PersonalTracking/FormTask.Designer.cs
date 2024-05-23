@@ -37,15 +37,15 @@
             label3 = new Label();
             label2 = new Label();
             txtSurname = new TextBox();
-            textBox1 = new TextBox();
-            txtName = new Label();
+            txtName = new TextBox();
+            labell = new Label();
             txtUserNo = new TextBox();
             label1 = new Label();
             label8 = new Label();
             label5 = new Label();
-            textBox2 = new TextBox();
+            txtContent = new TextBox();
             label6 = new Label();
-            textBox3 = new TextBox();
+            txtTitle = new TextBox();
             btnClose = new Button();
             btnSave = new Button();
             cmbTaskState = new ComboBox();
@@ -76,6 +76,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(302, 465);
             dataGridView1.TabIndex = 1;
+            dataGridView1.RowEnter += dataGridView1_RowEnter;
             // 
             // panel2
             // 
@@ -139,35 +140,35 @@
             // 
             // txtSurname
             // 
-            txtSurname.Location = new Point(117, 96);
+            txtSurname.Location = new Point(181, 96);
             txtSurname.Margin = new Padding(3, 4, 3, 4);
             txtSurname.Name = "txtSurname";
             txtSurname.ReadOnly = true;
             txtSurname.Size = new Size(221, 27);
             txtSurname.TabIndex = 15;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(117, 57);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(221, 27);
-            textBox1.TabIndex = 14;
-            // 
             // txtName
             // 
-            txtName.AutoSize = true;
-            txtName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtName.Location = new Point(11, 60);
+            txtName.Location = new Point(181, 57);
+            txtName.Margin = new Padding(3, 4, 3, 4);
             txtName.Name = "txtName";
-            txtName.Size = new Size(68, 28);
-            txtName.TabIndex = 17;
-            txtName.Text = "Name";
+            txtName.ReadOnly = true;
+            txtName.Size = new Size(221, 27);
+            txtName.TabIndex = 14;
+            // 
+            // labell
+            // 
+            labell.AutoSize = true;
+            labell.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labell.Location = new Point(11, 60);
+            labell.Name = "labell";
+            labell.Size = new Size(68, 28);
+            labell.TabIndex = 17;
+            labell.Text = "Name";
             // 
             // txtUserNo
             // 
-            txtUserNo.Location = new Point(117, 15);
+            txtUserNo.Location = new Point(181, 15);
             txtUserNo.Margin = new Padding(3, 4, 3, 4);
             txtUserNo.Name = "txtUserNo";
             txtUserNo.ReadOnly = true;
@@ -204,15 +205,15 @@
             label5.TabIndex = 28;
             label5.Text = "Content";
             // 
-            // textBox2
+            // txtContent
             // 
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(24, 297);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(406, 276);
-            textBox2.TabIndex = 2;
+            txtContent.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtContent.Location = new Point(24, 297);
+            txtContent.Margin = new Padding(3, 4, 3, 4);
+            txtContent.Multiline = true;
+            txtContent.Name = "txtContent";
+            txtContent.Size = new Size(406, 276);
+            txtContent.TabIndex = 2;
             // 
             // label6
             // 
@@ -224,14 +225,14 @@
             label6.TabIndex = 30;
             label6.Text = "Title";
             // 
-            // textBox3
+            // txtTitle
             // 
-            textBox3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox3.Location = new Point(117, 215);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(221, 34);
-            textBox3.TabIndex = 1;
+            txtTitle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTitle.Location = new Point(175, 214);
+            txtTitle.Margin = new Padding(3, 4, 3, 4);
+            txtTitle.Name = "txtTitle";
+            txtTitle.Size = new Size(227, 34);
+            txtTitle.TabIndex = 1;
             // 
             // btnClose
             // 
@@ -255,13 +256,14 @@
             btnSave.TabIndex = 3;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // cmbTaskState
             // 
             cmbTaskState.FormattingEnabled = true;
-            cmbTaskState.Location = new Point(117, 171);
+            cmbTaskState.Location = new Point(175, 170);
             cmbTaskState.Name = "cmbTaskState";
-            cmbTaskState.Size = new Size(217, 28);
+            cmbTaskState.Size = new Size(227, 28);
             cmbTaskState.TabIndex = 31;
             // 
             // FormTask
@@ -273,14 +275,14 @@
             Controls.Add(btnClose);
             Controls.Add(btnSave);
             Controls.Add(label6);
-            Controls.Add(textBox3);
+            Controls.Add(txtTitle);
             Controls.Add(label5);
-            Controls.Add(textBox2);
+            Controls.Add(txtContent);
             Controls.Add(label8);
             Controls.Add(label2);
             Controls.Add(txtSurname);
-            Controls.Add(textBox1);
             Controls.Add(txtName);
+            Controls.Add(labell);
             Controls.Add(txtUserNo);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -305,15 +307,15 @@
         private Label label3;
         private Label label2;
         private TextBox txtSurname;
-        private TextBox textBox1;
-        private Label txtName;
+        private TextBox txtName;
+        private Label labell;
         private TextBox txtUserNo;
         private Label label1;
         private Label label8;
         private Label label5;
-        private TextBox textBox2;
+        private TextBox txtContent;
         private Label label6;
-        private TextBox textBox3;
+        private TextBox txtTitle;
         private Button btnClose;
         private Button btnSave;
         private ComboBox cmbPosition;

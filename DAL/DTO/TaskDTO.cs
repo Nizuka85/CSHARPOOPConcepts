@@ -13,5 +13,6 @@ namespace DAL.DTO
         public List<Department> Departments { get; set; }
         public List<PositionDTO> Positions { get; set; }
         public List<TASKSTATE> TaskSatates {  get; set; }
+        public List<TaskDetailDTO> Tasks { get; set; }
     }
 }

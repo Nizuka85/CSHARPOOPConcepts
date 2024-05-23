@@ -3125,7 +3125,7 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnSatateName;
+            private global::System.Data.DataColumn columnStateName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -3170,9 +3170,9 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SatateNameColumn {
+            public global::System.Data.DataColumn StateNameColumn {
                 get {
-                    return this.columnSatateName;
+                    return this.columnStateName;
                 }
             }
             
@@ -3213,11 +3213,11 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TASKSTATERow AddTASKSTATERow(string SatateName) {
+            public TASKSTATERow AddTASKSTATERow(string StateName) {
                 TASKSTATERow rowTASKSTATERow = ((TASKSTATERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        SatateName};
+                        StateName};
                 rowTASKSTATERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTASKSTATERow);
                 return rowTASKSTATERow;
@@ -3248,7 +3248,7 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnSatateName = base.Columns["SatateName"];
+                this.columnStateName = base.Columns["StateName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3256,8 +3256,8 @@ namespace DAL {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnSatateName = new global::System.Data.DataColumn("SatateName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSatateName);
+                this.columnStateName = new global::System.Data.DataColumn("StateName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStateName);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -3266,8 +3266,8 @@ namespace DAL {
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
-                this.columnSatateName.AllowDBNull = false;
-                this.columnSatateName.MaxLength = 50;
+                this.columnStateName.AllowDBNull = false;
+                this.columnStateName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4123,12 +4123,12 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string SatateName {
+            public string StateName {
                 get {
-                    return ((string)(this[this.tableTASKSTATE.SatateNameColumn]));
+                    return ((string)(this[this.tableTASKSTATE.StateNameColumn]));
                 }
                 set {
-                    this[this.tableTASKSTATE.SatateNameColumn] = value;
+                    this[this.tableTASKSTATE.StateNameColumn] = value;
                 }
             }
         }
@@ -7555,30 +7555,30 @@ SELECT ID, EmployeeID, TaskTitle, TaskContent, TaskStarDate, TaskDeliveryDate, T
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "TASKSTATE";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("SatateName", "SatateName");
+            tableMapping.ColumnMappings.Add("StateName", "StateName");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[TASKSTATE] WHERE (([ID] = @Original_ID) AND ([SatateName] = @O" +
-                "riginal_SatateName))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[TASKSTATE] WHERE (([ID] = @Original_ID) AND ([StateName] = @Or" +
+                "iginal_StateName))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SatateName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SatateName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StateName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StateName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TASKSTATE] ([SatateName]) VALUES (@SatateName);\r\nSELECT ID, Sa" +
-                "tateName FROM TASKSTATE WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TASKSTATE] ([StateName]) VALUES (@StateName);\r\nSELECT ID, Stat" +
+                "eName FROM TASKSTATE WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SatateName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SatateName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StateName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StateName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[TASKSTATE] SET [SatateName] = @SatateName WHERE (([ID] = @Original_" +
-                "ID) AND ([SatateName] = @Original_SatateName));\r\nSELECT ID, SatateName FROM TASK" +
-                "STATE WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[TASKSTATE] SET [StateName] = @StateName WHERE (([ID] = @Original_ID" +
+                ") AND ([StateName] = @Original_StateName));\r\nSELECT ID, StateName FROM TASKSTATE" +
+                " WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SatateName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SatateName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StateName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StateName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SatateName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SatateName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StateName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StateName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -7595,7 +7595,7 @@ SELECT ID, EmployeeID, TaskTitle, TaskContent, TaskStarDate, TaskDeliveryDate, T
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, SatateName FROM dbo.TASKSTATE";
+            this._commandCollection[0].CommandText = "SELECT ID, StateName FROM dbo.TASKSTATE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7656,13 +7656,13 @@ SELECT ID, EmployeeID, TaskTitle, TaskContent, TaskStarDate, TaskDeliveryDate, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, string Original_SatateName) {
+        public virtual int Delete(int Original_ID, string Original_StateName) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            if ((Original_SatateName == null)) {
-                throw new global::System.ArgumentNullException("Original_SatateName");
+            if ((Original_StateName == null)) {
+                throw new global::System.ArgumentNullException("Original_StateName");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_SatateName));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_StateName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7684,12 +7684,12 @@ SELECT ID, EmployeeID, TaskTitle, TaskContent, TaskStarDate, TaskDeliveryDate, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string SatateName) {
-            if ((SatateName == null)) {
-                throw new global::System.ArgumentNullException("SatateName");
+        public virtual int Insert(string StateName) {
+            if ((StateName == null)) {
+                throw new global::System.ArgumentNullException("StateName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(SatateName));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(StateName));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7711,19 +7711,19 @@ SELECT ID, EmployeeID, TaskTitle, TaskContent, TaskStarDate, TaskDeliveryDate, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string SatateName, int Original_ID, string Original_SatateName, int ID) {
-            if ((SatateName == null)) {
-                throw new global::System.ArgumentNullException("SatateName");
+        public virtual int Update(string StateName, int Original_ID, string Original_StateName, int ID) {
+            if ((StateName == null)) {
+                throw new global::System.ArgumentNullException("StateName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(SatateName));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(StateName));
             }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_ID));
-            if ((Original_SatateName == null)) {
-                throw new global::System.ArgumentNullException("Original_SatateName");
+            if ((Original_StateName == null)) {
+                throw new global::System.ArgumentNullException("Original_StateName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_SatateName));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_StateName));
             }
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
@@ -7746,8 +7746,8 @@ SELECT ID, EmployeeID, TaskTitle, TaskContent, TaskStarDate, TaskDeliveryDate, T
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string SatateName, int Original_ID, string Original_SatateName) {
-            return this.Update(SatateName, Original_ID, Original_SatateName, Original_ID);
+        public virtual int Update(string StateName, int Original_ID, string Original_StateName) {
+            return this.Update(StateName, Original_ID, Original_StateName, Original_ID);
         }
     }
     
