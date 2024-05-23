@@ -54,11 +54,11 @@ namespace PersonalTracking
             List<TaskDetailDTO> list = dto.Tasks;
             if (txtUserNo.Text.Trim() != "")
                 list = list.Where(x => x.UserNo == Convert.ToInt32(txtUserNo.Text)).ToList();
-            if (labelll.Text.Trim() != "")
-                list = list.Where(x => x.Name.Contains(labelll.Text.Trim())).ToList();
+            if (txtName.Text.Trim() != "")
+                list = list.Where(x => x.Name.Contains(txtName.Text.Trim())).ToList();
             if (txtSurname.Text.Trim() != "")
                 list = list.Where(x => x.SurName.Contains(txtSurname.Text)).ToList();
-            if (cmbDepartment.SelectedIndex != -1)
+            if (cmbDepartment.SelectedIndex != -1 && cmbDepartment.SelectedIndex != 0)
                 list = list.Where(x => x.DepartmentID == Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
             if (cmbPosition.SelectedIndex != -1)
                 list = list.Where(x => x.PositionID == Convert.ToInt32(cmbPosition.SelectedValue)).ToList();
@@ -82,13 +82,10 @@ namespace PersonalTracking
             dto = TaskBLL.GetAll();
             dataGridView1.DataSource = dto.Tasks;
             combofull = false;
-            cmbDepartment.DataSource = dto.Departments;
-            cmbDepartment.DisplayMember = "DepartmentName";
-            cmbDepartment.ValueMember = "ID";
+            LoadDepartmentComboBox();
             cmbPosition.DataSource = dto.Positions;
             cmbPosition.DisplayMember = "PositionName";
             cmbPosition.ValueMember = "ID";
-            cmbDepartment.SelectedIndex = -1;
             cmbPosition.SelectedIndex = -1;
             combofull = true;
             cmbTaskState.DataSource = dto.TaskSatates;
@@ -97,8 +94,8 @@ namespace PersonalTracking
         }
         private void FormTaskList_Load(object sender, EventArgs e)
         {
-           FillAllData();
-            dataGridView1.Columns[0].Visible = false;
+            FillAllData();
+            dataGridView1.Columns[0].HeaderText = "Task ID";
             dataGridView1.Columns[1].HeaderText = "User Nº";
             dataGridView1.Columns[2].HeaderText = "Name";
             dataGridView1.Columns[3].HeaderText = "Surname";
@@ -139,10 +136,10 @@ namespace PersonalTracking
             if (combofull)
             {
 
-                if (cmbDepartment.ValueMember.ToString() != "0")
+                if (cmbDepartment.SelectedValue.ToString() != "0")
                 {
-                    dataGridView1.DataSource = dto.Employees.Where(x => x.DepartmentID == Convert.ToInt32(cmbDepartment.ValueMember)).ToList();
-                    cmbPosition.DataSource = dto.Positions.Where(x => x.DepartmentID == Convert.ToInt32(cmbDepartment.ValueMember)).ToList();
+                    dataGridView1.DataSource = dto.Employees.Where(x => x.DepartmentID == Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
+                    cmbPosition.DataSource = dto.Positions.Where(x => x.DepartmentID == Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
                 }
                 else
                 {        

@@ -54,7 +54,7 @@ namespace DAL.DAO
             foreach ( var item in list)
             {
                 TaskDetailDTO dto = new TaskDetailDTO();
-                dto.TackID = item.taskID;
+                dto.TaskID = item.taskID;
                 dto.Title = item.title;
                 dto.Content = item.content;
                 dto.TaskSartDate= item.startdate;
