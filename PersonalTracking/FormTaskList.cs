@@ -95,7 +95,7 @@ namespace PersonalTracking
         private void FormTaskList_Load(object sender, EventArgs e)
         {
             FillAllData();
-            dataGridView1.Columns[0].HeaderText = "Task ID";
+            dataGridView1.Columns[0].HeaderText = "Task Title";
             dataGridView1.Columns[1].HeaderText = "User Nº";
             dataGridView1.Columns[2].HeaderText = "Name";
             dataGridView1.Columns[3].HeaderText = "Surname";

@@ -59,10 +59,10 @@
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(447, 0);
+            panel1.Location = new Point(435, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(302, 668);
+            panel1.Size = new Size(747, 892);
             panel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -70,11 +70,11 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 203);
+            dataGridView1.Location = new Point(0, 220);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(302, 465);
+            dataGridView1.Size = new Size(747, 672);
             dataGridView1.TabIndex = 1;
             dataGridView1.RowEnter += dataGridView1_RowEnter;
             // 
@@ -88,7 +88,7 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(302, 203);
+            panel2.Size = new Size(747, 220);
             panel2.TabIndex = 0;
             // 
             // cmbPosition
@@ -212,7 +212,7 @@
             txtContent.Margin = new Padding(3, 4, 3, 4);
             txtContent.Multiline = true;
             txtContent.Name = "txtContent";
-            txtContent.Size = new Size(406, 276);
+            txtContent.Size = new Size(378, 276);
             txtContent.TabIndex = 2;
             // 
             // label6
@@ -270,7 +270,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(749, 668);
+            ClientSize = new Size(1182, 892);
             Controls.Add(cmbTaskState);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
