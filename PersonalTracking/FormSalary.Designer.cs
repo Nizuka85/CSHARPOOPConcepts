@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            dataGridView1 = new DataGridView();
             panel2 = new Panel();
+            dataGridView1 = new DataGridView();
             cmbPosition = new ComboBox();
             cmbDepartment = new ComboBox();
             label4 = new Label();
@@ -50,45 +50,46 @@
             btnSave = new Button();
             cmbMonth = new ComboBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(578, 0);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(336, 600);
+            panel1.Size = new Size(927, 662);
             panel1.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(0, 180);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(336, 420);
-            dataGridView1.TabIndex = 1;
-            dataGridView1.RowEnter += dataGridView1_RowEnter;
             // 
             // panel2
             // 
+            panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel2.Controls.Add(dataGridView1);
             panel2.Controls.Add(cmbPosition);
             panel2.Controls.Add(cmbDepartment);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
+            panel2.Dock = DockStyle.Right;
+            panel2.Location = new Point(418, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(336, 180);
+            panel2.Size = new Size(509, 662);
             panel2.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Bottom;
+            dataGridView1.Location = new Point(0, 242);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(509, 420);
+            dataGridView1.TabIndex = 1;
+            dataGridView1.RowEnter += dataGridView1_RowEnter;
             // 
             // cmbPosition
             // 
@@ -105,6 +106,7 @@
             cmbDepartment.Name = "cmbDepartment";
             cmbDepartment.Size = new Size(227, 28);
             cmbDepartment.TabIndex = 25;
+            cmbDepartment.SelectedIndexChanged += cmbDepartment_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -263,9 +265,10 @@
             // 
             // FormSalary
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            AutoScaleMode = AutoScaleMode.None;
+            AutoSize = true;
+            AutoValidate = AutoValidate.Disable;
+            ClientSize = new Size(928, 662);
             Controls.Add(cmbMonth);
             Controls.Add(btnClose);
             Controls.Add(btnSave);
@@ -286,9 +289,9 @@
             Text = "FormSalary";
             Load += FormSalary_Load;
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

@@ -55,5 +55,10 @@ namespace DAL.DAO
                 throw ex;
             }
         }
+
+        public static List<PERMISSIONSTATE> GetStates()
+        {
+            return db.PERMISSIONSTATE.ToList();
+        }
     }
 }

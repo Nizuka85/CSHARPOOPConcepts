@@ -49,10 +49,13 @@
     <Compile Include="DAO\DepartmentDAO.cs" />
     <Compile Include="DAO\EmployeeContext.cs" />
     <Compile Include="DAO\employeeDAO.cs" />
+    <Compile Include="DAO\PermissionDAO.cs" />
     <Compile Include="DAO\SalaryDAO.cs" />
     <Compile Include="DAO\TaskDAO.cs" />
     <Compile Include="DTO\EmployeeDetailDTO.cs" />
     <Compile Include="DTO\EmployeeDTO.cs" />
+    <Compile Include="DTO\PermissionDetailDTO.cs" />
+    <Compile Include="DTO\PermissionDTO.cs" />
     <Compile Include="DTO\PositionDTO.cs" />
     <Compile Include="DTO\SalaryDetailDTO.cs" />
     <Compile Include="DTO\SalaryDTO.cs" />

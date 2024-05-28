@@ -90,8 +90,16 @@ namespace PersonalTracking
             txtName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtSurname.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             txtSalary.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-            txtYear.Text= DateTime.Today.Year.ToString();
+            txtYear.Text = DateTime.Today.Year.ToString();
             EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+        }
+
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combofull)
+            {
+                cmbPosition.DataSource = dto.Positions.Where(x => x.DepartmentID == Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
+            }
         }
     }
 }

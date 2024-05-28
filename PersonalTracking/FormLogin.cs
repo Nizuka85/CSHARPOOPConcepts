@@ -1,3 +1,8 @@
+using System;
+using System.Windows.Forms;
+using BLL;
+using DAL;
+
 namespace PersonalTracking
 {
     public partial class FormLogin : Form
@@ -19,9 +24,25 @@ namespace PersonalTracking
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            FormMain form = new FormMain(); 
-            this.Hide();
-            form.ShowDialog();
+            if (txtUserNo.Text.Trim() == "" || txtPassword.Text.Trim() == "")
+                MessageBox.Show("Please fill the userNº and Passaword");
+            else
+            {
+                List<EMPLOYEE> employeelist = EmployeeBLL.GetEmployees(Convert.ToInt32(txtUserNo.Text),txtPassword.Text);
+                if (employeelist.Count == 0)
+                    MessageBox.Show("Please control your information");
+                else
+                {
+                    EMPLOYEE employee = new EMPLOYEE();
+                    employee = employeelist.First();
+                    UserStatic.EmployeeID = employee.ID;
+                    UserStatic.UserNo =employee.UserNo;
+                    UserStatic.isAdmin = employee.isAdmin;
+                    FormMain frm = new FormMain();
+                    this.Hide();
+                    frm.ShowDialog();
+                }
+            }
         }
     }
 }

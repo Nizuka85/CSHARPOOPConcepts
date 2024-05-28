@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,16 +12,16 @@ namespace DAL.DAO
     {
         public static void AddEmployee(EMPLOYEE employee)
         {
-			try
-			{
-				db.EMPLOYEE.InsertOnSubmit(employee);
-				db.SubmitChanges();
-			}
-			catch (Exception ex)
-			{
+            try
+            {
+                db.EMPLOYEE.InsertOnSubmit(employee);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
 
-				throw ex;
-			}
+                throw ex;
+            }
         }
 
         public static List<EmployeeDetailDTO> GetEmployees()
@@ -31,20 +32,20 @@ namespace DAL.DAO
                         join p in db.POSITION on e.PositionID equals p.ID
                         select new
                         {
-                            UserNo=e.UserNo,
-                            Name=e.Name,
-                            SurName=e.SurName,
-                            EmployeeID=e.ID,
-                            Password=e.Password,
-                            DepartmentName=d.DepartmentName,
-                            PositionName=p.PositionName,
-                            DepartmentID=p.DepartmentID,
-                            PositionID=e.PositionID,
-                            isAdmin=e.isAdmin,
-                            Salary=e.Salary,
-                            ImagePath=e.ImagePath,
-                            BirthDay=e.BirtDay,
-                            Adress=e.Adress,
+                            UserNo = e.UserNo,
+                            Name = e.Name,
+                            SurName = e.SurName,
+                            EmployeeID = e.ID,
+                            Password = e.Password,
+                            DepartmentName = d.DepartmentName,
+                            PositionName = p.PositionName,
+                            DepartmentID = p.DepartmentID,
+                            PositionID = e.PositionID,
+                            isAdmin = e.isAdmin,
+                            Salary = e.Salary,
+                            ImagePath = e.ImagePath,
+                            BirthDay = e.BirtDay,
+                            Adress = e.Adress,
 
 
                         }).OrderBy(x => x.UserNo).ToList();
@@ -62,13 +63,26 @@ namespace DAL.DAO
                 dto.PositionName = item.PositionName;
                 dto.isAdmin = item.isAdmin;
                 dto.Salary = item.Salary;
-                dto.BrirtDay= item.BirthDay;
+                dto.BrirtDay = item.BirthDay;
                 dto.Adress = item.Adress;
                 employees.Add(dto);
             }
             return employees;
         }
 
+        public static List<EMPLOYEE> GetEmployees(int v, string text)
+        {
+            try
+            {
+                List<EMPLOYEE> list = db.EMPLOYEE.Where(x => x.UserNo == v && x.Password == text).ToList();
+                return list;
+            }           
+            catch (Exception)
+            {
+                throw;
+            }
+                        
+        }      
         public static List<EMPLOYEE> GetUser(int v)
         {
             return db.EMPLOYEE.Where(x=> x.UserNo ==v).ToList();

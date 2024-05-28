@@ -40,43 +40,47 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(22, 26);
+            label1.Location = new Point(25, 35);
             label1.Name = "label1";
-            label1.Size = new Size(67, 21);
+            label1.Size = new Size(82, 28);
             label1.TabIndex = 0;
             label1.Text = "UserNo";
             // 
             // txtUserNo
             // 
-            txtUserNo.Location = new Point(126, 26);
+            txtUserNo.Location = new Point(144, 35);
+            txtUserNo.Margin = new Padding(3, 4, 3, 4);
             txtUserNo.Name = "txtUserNo";
-            txtUserNo.Size = new Size(194, 23);
+            txtUserNo.Size = new Size(221, 27);
             txtUserNo.TabIndex = 0;
             txtUserNo.KeyPress += txtUserNo_KeyPress;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(126, 65);
+            txtPassword.Location = new Point(144, 87);
+            txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(194, 23);
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(221, 27);
             txtPassword.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(22, 65);
+            label2.Location = new Point(25, 87);
             label2.Name = "label2";
-            label2.Size = new Size(82, 21);
+            label2.Size = new Size(101, 28);
             label2.TabIndex = 2;
             label2.Text = "Password";
             // 
             // btnExit
             // 
             btnExit.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnExit.Location = new Point(41, 159);
+            btnExit.Location = new Point(47, 212);
+            btnExit.Margin = new Padding(3, 4, 3, 4);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(103, 47);
+            btnExit.Size = new Size(118, 63);
             btnExit.TabIndex = 3;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = true;
@@ -85,9 +89,10 @@
             // btnLogin
             // 
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogin.Location = new Point(194, 159);
+            btnLogin.Location = new Point(222, 212);
+            btnLogin.Margin = new Padding(3, 4, 3, 4);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(126, 47);
+            btnLogin.Size = new Size(144, 63);
             btnLogin.TabIndex = 2;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
@@ -95,15 +100,16 @@
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(368, 260);
+            ClientSize = new Size(421, 347);
             Controls.Add(btnLogin);
             Controls.Add(btnExit);
             Controls.Add(txtPassword);
             Controls.Add(label2);
             Controls.Add(txtUserNo);
             Controls.Add(label1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormLogin";
             Text = "Form1";
             ResumeLayout(false);
