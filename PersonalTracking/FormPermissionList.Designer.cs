@@ -387,6 +387,7 @@
             btnApprove.TabIndex = 4;
             btnApprove.Text = "Approve";
             btnApprove.UseVisualStyleBackColor = true;
+            btnApprove.Click += btnApprove_Click;
             // 
             // btnDisApproved
             // 
@@ -398,6 +399,7 @@
             btnDisApproved.TabIndex = 5;
             btnDisApproved.Text = "Disapprove";
             btnDisApproved.UseVisualStyleBackColor = true;
+            btnDisApproved.Click += btnDisApproved_Click;
             // 
             // btnNew
             // 
@@ -456,6 +458,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(914, 297);
             dataGridView1.TabIndex = 2;
+            dataGridView1.RowEnter += dataGridView1_RowEnter;
             // 
             // FormPermissionList
             // 

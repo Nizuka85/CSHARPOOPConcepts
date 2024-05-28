@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,12 +39,14 @@ namespace DAL.DAO
                              statename=s.StateName,
                              stateID=p.PermissionState,
                              startdate=p.PermissionStarDate,
-                             enddate=p.PermissionStarDate,
+                             enddate=p.PermissionEndDate,
                              employeeID=p.EmployeeID,
+                             PermissionID=p.ID,
                              explanation=p.PermissionExplanation,
                              dayamount=p.PermissionDay,
                              DepartmentID=e.DepartmentID,
                              positionID=e.PositionID,
+
                          }).OrderBy(x => x.startdate).ToList();
             foreach (var item in list)
             {
@@ -60,10 +63,44 @@ namespace DAL.DAO
                 dto.State=item.stateID;
                 dto.StateName = item.statename;
                 dto.Explanation = item.explanation;
+                dto.PermissionID= item.PermissionID;
                 permissions.Add(dto);
 
             }
             return permissions;
+        }
+
+        public static void UpdatePermission(PERMISSION permission)
+        {
+            try
+            {
+                PERMISSION pr = db.PERMISSION.First(x => x.ID == permission.ID);
+                pr.PermissionStarDate = permission.PermissionStarDate;
+                pr.PermissionEndDate = permission.PermissionEndDate;
+                pr.PermissionExplanation = permission.PermissionExplanation;
+                pr.PermissionDay = permission.PermissionDay;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public static void UpdatePermission(int permissionID, int approved)
+        {
+            try
+            {
+                PERMISSION pr =db.PERMISSION.First(x =>x.ID == permissionID);
+                pr.PermissionState = approved;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
     }
 }
