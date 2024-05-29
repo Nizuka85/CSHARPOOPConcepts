@@ -418,6 +418,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(862, 227);
             dataGridView1.TabIndex = 2;
+            dataGridView1.RowEnter += dataGridView1_RowEnter;
             // 
             // FormTaskList
             // 

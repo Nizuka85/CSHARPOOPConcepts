@@ -24,7 +24,7 @@ namespace PersonalTracking
         {
             CleanFilter();
 
-            
+
         }
         private void CleanFilter()
         {
@@ -62,10 +62,10 @@ namespace PersonalTracking
                 list = list.Where(x => x.DepartmentID == Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
             if (cmbPosition.SelectedIndex != -1)
                 list = list.Where(x => x.PositionID == Convert.ToInt32(cmbPosition.SelectedValue)).ToList();
-            if(rbStartDate.Checked)            
-                list=list.Where(x=>x.TaskSartDate>Convert.ToDateTime(dpStat.Value) && x.TaskSartDate<Convert.ToDateTime(dpFinish.Value)).ToList();
+            if (rbStartDate.Checked)
+                list = list.Where(x => x.TaskSartDate > Convert.ToDateTime(dpStat.Value) && x.TaskSartDate < Convert.ToDateTime(dpFinish.Value)).ToList();
             if (rbDeliveryDate.Checked)
-                list =list.Where(x=>x.TackDeliveryDate> Convert.ToDateTime(dpStat.Value) && x.TackDeliveryDate< Convert.ToDateTime(dpFinish.Value)).ToList();
+                list = list.Where(x => x.TackDeliveryDate > Convert.ToDateTime(dpStat.Value) && x.TackDeliveryDate < Convert.ToDateTime(dpFinish.Value)).ToList();
             if (cmbTaskState.SelectedIndex != -1)
                 list = list.Where(x => x.taskStateID == Convert.ToInt32(cmbTaskState.SelectedValue)).ToList();
             dataGridView1.DataSource = list;
@@ -92,6 +92,8 @@ namespace PersonalTracking
             cmbTaskState.DisplayMember = "StateName";
             cmbTaskState.SelectedIndex = -1;
         }
+        TaskDetailDTO detail = new TaskDetailDTO();
+
         private void FormTaskList_Load(object sender, EventArgs e)
         {
             FillAllData();
@@ -110,8 +112,8 @@ namespace PersonalTracking
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
-            MessageBox.Show(UserStatic.EmployeeID.ToString() + " " + UserStatic.isAdmin.ToString());
            
+
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -126,10 +128,22 @@ namespace PersonalTracking
 
         private void btnUpDate_Click(object sender, EventArgs e)
         {
-            FormTask form = new FormTask();
-            this.Hide();
-            form.ShowDialog();
-            this.Visible = true;
+            if (detail.TaskID == 0)
+            {
+                MessageBox.Show("Please select a task on table");
+            }
+            else
+            {
+                FormTask form = new FormTask();
+                form.isUpdate = true;
+                form.detail = detail;
+                this.Hide();
+                form.ShowDialog();
+                this.Visible = true;
+                FillAllData();
+                CleanFilter();
+            }              
+        
         }
 
         private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
@@ -143,12 +157,13 @@ namespace PersonalTracking
                     cmbPosition.DataSource = dto.Positions.Where(x => x.DepartmentID == Convert.ToInt32(cmbDepartment.SelectedValue)).ToList();
                 }
                 else
-                {        
+                {
                     LoadDepartmentComboBox();
                     dataGridView1.DataSource = dto.Employees;
                     cmbPosition.DataSource = dto.Positions;
                     cmbPosition.SelectedIndex = -1;
-            }    }
+                }
+            }
         }
         private void LoadDepartmentComboBox()
         {
@@ -162,6 +177,20 @@ namespace PersonalTracking
             cmbDepartment.SelectedIndex = 0;
             cmbDepartment.DisplayMember = "DepartmentName";
             cmbDepartment.ValueMember = "ID";
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail.Name = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            detail.SurName = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            detail.Title = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            detail.Content = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
+            detail.UserNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            detail.taskStateID= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value);
+            detail.TaskID= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
+            detail.EmployeeID= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
+            detail.TaskSartDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
+            detail.TackDeliveryDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
         }
     }
 }
