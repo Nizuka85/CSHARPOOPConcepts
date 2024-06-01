@@ -11,9 +11,21 @@ namespace BLL
 {
     public class SalaryBLL
     {
-        public static void AddSalary(SALARY salary)
+        public static void AddSalary(SALARY salary, bool control)
         {
             SalaryDAO.AddSalary(salary);
+            if (control)
+              employeeDAO.UpdateEmployee(salary.EmployeeID, salary.Amount);
+            
+        }
+
+        public static void UpdateSalary(SALARY salary, bool control)
+        {
+            SalaryDAO.UpdateSalary(salary);
+            if (control)
+            {
+                employeeDAO.UpdateEmployee(salary.EmployeeID, salary.Amount);
+            }
         }
 
         public static SalaryDTO GetAll()

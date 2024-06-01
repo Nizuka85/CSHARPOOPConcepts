@@ -87,5 +87,21 @@ namespace DAL.DAO
         {
             return db.EMPLOYEE.Where(x=> x.UserNo ==v).ToList();
         }
+
+        public static void UpdateEmployee(int employeeID, int? amount)
+        {
+            try
+            {
+                EMPLOYEE employee = db.EMPLOYEE.First(x => x.ID == employeeID);
+                employee.Salary = amount.Value;
+                db.SubmitChanges();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

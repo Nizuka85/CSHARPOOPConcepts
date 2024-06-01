@@ -37,10 +37,20 @@ namespace PersonalTracking
 
         private void btnUpDate_Click(object sender, EventArgs e)
         {
-            FormSalary form = new FormSalary();
-            this.Hide();
-            form.ShowDialog();
-            this.Visible = true;
+            if (detail.SalaryID == 0)
+                MessageBox.Show("Please select a salary from Table");
+            else
+            {
+                FormSalary form = new FormSalary();
+                form.isUpdate = true;
+                form.detail = detail;
+                this.Hide();
+                form.ShowDialog();
+                this.Visible = true;
+                FillAllData();
+                CleanFillter();
+            }            
+            
         }
         SalaryDTO dto = new SalaryDTO();
         private bool combofull;
@@ -63,7 +73,7 @@ namespace PersonalTracking
             cmbMonth.ValueMember = "ID";
             cmbMonth.SelectedIndex = -1;
         }
-
+        SalaryDetailDTO detail = new SalaryDetailDTO();
         private void FormSalaryList_Load(object sender, EventArgs e)
         {
             FillAllData();
@@ -146,6 +156,20 @@ namespace PersonalTracking
             txtYear.Clear();
             txtsalary.Clear();
             dataGridView1.DataSource = dto.Salaries;
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            detail.Name = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            detail.SurName = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            detail.UserNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            detail.SalaryID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
+            detail.EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            detail.SalaryYear = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[9].Value);
+            detail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value);
+            detail.SalaryAmount = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
+            detail.OldSalary = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[13].Value);
+            
         }
     }
 }
