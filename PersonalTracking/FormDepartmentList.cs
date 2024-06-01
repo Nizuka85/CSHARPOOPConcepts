@@ -42,13 +42,13 @@ namespace PersonalTracking
             {
                 FormDepartment form = new FormDepartment();
                 form.isupdate = true;
-                form.detail= detail;
+                form.detail = detail;
                 this.Hide();
                 form.ShowDialog();
                 this.Visible = true;
                 list = DepartmentBLL.GetDepartment();
                 dataGridView1.DataSource = list;
-            }            
+            }
         }
         List<Department> list = new List<Department>();
         public Department detail = new Department();
@@ -66,6 +66,18 @@ namespace PersonalTracking
             detail.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             detail.DepartmentName = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure to delete this Department", "warning", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                DepartmentBLL.DeleteDepartment(detail.ID);
+                MessageBox.Show("Department was Deleted");
+                list = DepartmentBLL.GetDepartment();
+                dataGridView1.DataSource = list;
+            }
         }
     }
 }
