@@ -38,5 +38,10 @@ namespace BLL
             dto.Salaries = SalaryDAO.GetSalaries();
             return dto;
         }
+
+        public static void DeleteSalary(int salaryID)
+        {
+            SalaryDAO.DeleteSalary(salaryID);
+        }
     }
 }

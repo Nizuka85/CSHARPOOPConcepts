@@ -49,6 +49,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(487, 499);
             dataGridView1.TabIndex = 0;
+            dataGridView1.RowEnter += dataGridView1_RowEnter;
             // 
             // flowLayoutPanel1
             // 

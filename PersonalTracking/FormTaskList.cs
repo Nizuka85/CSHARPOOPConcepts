@@ -112,7 +112,7 @@ namespace PersonalTracking
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
-           
+
 
         }
 
@@ -142,8 +142,8 @@ namespace PersonalTracking
                 this.Visible = true;
                 FillAllData();
                 CleanFilter();
-            }              
-        
+            }
+
         }
 
         private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
@@ -186,11 +186,24 @@ namespace PersonalTracking
             detail.Title = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             detail.Content = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
             detail.UserNo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
-            detail.taskStateID= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value);
-            detail.TaskID= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
-            detail.EmployeeID= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
+            detail.taskStateID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[14].Value);
+            detail.TaskID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
+            detail.EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
             detail.TaskSartDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[4].Value);
             detail.TackDeliveryDate = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[5].Value);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure to delete this task", "warning", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                TaskBLL.DeleteTask(detail.TaskID);
+                MessageBox.Show("Task was Deleted");
+                FillAllData();
+                CleanFilter();
+
+            }
         }
     }
 }

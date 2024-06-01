@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 using DAL;
+using DAL.DTO;
 
 namespace PersonalTracking
 {
@@ -26,6 +27,8 @@ namespace PersonalTracking
             this.Close();
         }
         List<Department> departmentsList = new List<Department>();
+        public PositionDTO detail=new PositionDTO();
+        public bool isupdate = false;
 
         private void FormPosition_Load(object sender, EventArgs e)
         {
@@ -34,6 +37,11 @@ namespace PersonalTracking
             cmbDepartment.DisplayMember = "DepartmentName";
             cmbDepartment.ValueMember = "ID";
             cmbDepartment.SelectedIndex = -1;
+            if (isupdate)
+            {
+                txtPosition.Text=detail.PositionName;
+                cmbDepartment.SelectedValue=detail.DepartmentID;
+            }
 
         }
 
@@ -45,13 +53,29 @@ namespace PersonalTracking
                 MessageBox.Show("Please select a department");
             else
             {
-                POSITION position = new POSITION(); 
-                position.PositionName = txtPosition.Text;
-                position.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
-                BLL.PositionBLL.AddPosition(position);
-                MessageBox.Show("position was added");
-                txtPosition.Clear();
-                cmbDepartment.SelectedIndex = -1;   
+                if (!isupdate)
+                {
+                    POSITION position = new POSITION();
+                    position.PositionName = txtPosition.Text;
+                    position.DepartmentID = Convert.ToInt32(cmbDepartment.SelectedValue);
+                    BLL.PositionBLL.AddPosition(position);
+                    MessageBox.Show("position was added");
+                    txtPosition.Clear();
+                    cmbDepartment.SelectedIndex = -1;
+                }
+                else
+                {
+                    POSITION position = new POSITION();
+                    position.ID=detail.ID;
+                    position.PositionName = txtPosition.Text;
+                    position.DepartmentID=Convert.ToInt32(cmbDepartment.SelectedValue);
+                    bool control = false;
+                    if (Convert.ToInt32(cmbDepartment.SelectedValue) != detail.OldDepartmenteID)
+                        control = true;
+                    PositionBLL.UpdatePosition(position, control);
+                    MessageBox.Show("Position was usdated");
+                    this.Close();
+                }
             }
         }
     }

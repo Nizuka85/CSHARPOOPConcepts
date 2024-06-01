@@ -89,6 +89,7 @@
             Name = "FormDepartment";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Department";
+            Load += FormDepartment_Load;
             ResumeLayout(false);
             PerformLayout();
         }

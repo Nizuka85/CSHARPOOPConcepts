@@ -49,8 +49,8 @@ namespace PersonalTracking
                 this.Visible = true;
                 FillAllData();
                 CleanFillter();
-            }            
-            
+            }
+
         }
         SalaryDTO dto = new SalaryDTO();
         private bool combofull;
@@ -169,7 +169,19 @@ namespace PersonalTracking
             detail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[10].Value);
             detail.SalaryAmount = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
             detail.OldSalary = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[13].Value);
-            
+
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure to delete this Salary", "warning", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                SalaryBLL.DeleteSalary(detail.SalaryID);
+                MessageBox.Show("Salary was Deleted");
+                FillAllData();
+                CleanFillter();
+        }   }
+
     }
 }

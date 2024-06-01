@@ -24,6 +24,22 @@ namespace DAL.DAO
             }
         }
 
+        public static void DeleteEmployee(int employeeID)
+        {
+            try
+            {
+                EMPLOYEE emp = db.EMPLOYEE.First(x => x.ID == employeeID);
+                db.EMPLOYEE.DeleteOnSubmit(emp);
+                db.SubmitChanges();                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        }
+
         public static List<EmployeeDetailDTO> GetEmployees()
         {
             List<EmployeeDetailDTO> employees = new List<EmployeeDetailDTO>();
@@ -65,6 +81,7 @@ namespace DAL.DAO
                 dto.Salary = item.Salary;
                 dto.BrirtDay = item.BirthDay;
                 dto.Adress = item.Adress;
+                dto.ImagemPath = item.ImagePath;
                 employees.Add(dto);
             }
             return employees;
@@ -101,6 +118,38 @@ namespace DAL.DAO
             {
 
                 throw;
+            }
+        }
+        public static void UpdateEmployee(POSITION position)
+        {
+            List<EMPLOYEE> list=db.EMPLOYEE.Where(x=> x.PositionID == position.ID).ToList();
+            foreach (var item in list)
+            {
+                item.DepartmentID = position.DepartmentID;
+            }
+            db.SubmitChanges();
+        }
+        public static void UpdateEmployee(EMPLOYEE employee)
+        {
+            try
+            {
+                EMPLOYEE emp = db.EMPLOYEE.First(x => x.ID == employee.ID);
+                emp.UserNo = employee.UserNo;
+                emp.Name = employee.Name;
+                emp.SurName = employee.SurName;
+                emp.Password = employee.Password;
+                emp.isAdmin= employee.isAdmin;
+                emp.BirtDay = employee.BirtDay;
+                emp.Adress = employee.Adress;
+                emp.DepartmentID = employee.DepartmentID;
+                emp.PositionID = employee.PositionID;
+                emp.Salary = employee.Salary;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
         }
     }

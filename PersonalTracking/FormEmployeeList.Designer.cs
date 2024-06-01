@@ -194,10 +194,12 @@
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 173);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(841, 308);
             dataGridView1.TabIndex = 1;
+            dataGridView1.RowEnter += dataGridView1_RowEnter;
             // 
             // panel2
             // 
@@ -246,6 +248,7 @@
             btnDelete.TabIndex = 2;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnClose
             // 
