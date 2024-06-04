@@ -80,6 +80,8 @@ namespace PersonalTracking
         void FillAllData()
         {
             dto = TaskBLL.GetAll();
+            if (!UserStatic.isAdmin)
+                dto.Tasks = dto.Tasks.Where(x => x.EmployeeID == UserStatic.EmployeeID).ToList();
             dataGridView1.DataSource = dto.Tasks;
             combofull = false;
             LoadDepartmentComboBox();
@@ -112,7 +114,15 @@ namespace PersonalTracking
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
+            if (!UserStatic.isAdmin)
+            {
+                btnNew.Visible = false;
+                btnUpDate.Visible = false;
+                btnDelete.Visible = false;               
+                pnlForAdmin.Hide();
+                btnApprove.Text = "Delivery";
 
+            }
 
         }
 
@@ -204,6 +214,26 @@ namespace PersonalTracking
                 CleanFilter();
 
             }
+        }
+
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            if (UserStatic.isAdmin && detail.taskStateID == TaskStates.OnEmployee && detail.EmployeeID != UserStatic.EmployeeID)
+                MessageBox.Show("Befor approve a task employee have to delivery task");
+            else if (UserStatic.isAdmin && detail.taskStateID == TaskStates.Approved)
+                MessageBox.Show("This task is already aproved");
+            else if (!UserStatic.isAdmin && detail.taskStateID == TaskStates.Delivered)
+                MessageBox.Show("This task is already delivered");
+            else if (!UserStatic.isAdmin && detail.taskStateID == TaskStates.Approved)
+                MessageBox.Show(" This task is already approved");
+            else
+            {
+                TaskBLL.ApproveTask(detail.TaskID, UserStatic.isAdmin);
+                MessageBox.Show("Task was Update");
+                FillAllData();
+                CleanFilter();
+            }
+
         }
     }
 }

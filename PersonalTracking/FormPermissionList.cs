@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,6 +51,8 @@ namespace PersonalTracking
         {
             if (detail.PermissionID == 0)
                 MessageBox.Show("please select a permission from the table");
+            else if (detail.State == PermissionStates.Approved || detail.State == PermissionStates.Disapproved)
+                MessageBox.Show("You can not update any approved permission");
             else
             {
                 FormPermission form = new FormPermission();
@@ -68,6 +71,8 @@ namespace PersonalTracking
         void FillAllData()
         {
             dto = PermissionBLL.GetAll();
+            if (!UserStatic.isAdmin)
+                dto.Permissions = dto.Permissions.Where(x => x.EmployeeID == UserStatic.EmployeeID).ToList();
             dataGridView1.DataSource = dto.Permissions;
             LoadDepartmentComboBox();
             comboBox1.DataSource = dto.Positions;
@@ -98,7 +103,14 @@ namespace PersonalTracking
             dataGridView1.Columns[11].HeaderText = "State";
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
-            combofull = false;
+            if(!UserStatic.isAdmin)
+            {
+                pnlForAdmin.Visible = false;
+                btnApprove.Hide();
+                btnDisApproved.Hide();
+                btnDelete.Hide();
+                btnClose.Location = new Point(297, 39);
+            }
 
         }
 

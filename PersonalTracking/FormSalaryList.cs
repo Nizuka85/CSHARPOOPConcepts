@@ -57,6 +57,8 @@ namespace PersonalTracking
         void FillAllData()
         {
             dto = SalaryBLL.GetAll();
+            if(!UserStatic.isAdmin) 
+                dto.Salaries= dto.Salaries.Where(s => s.EmployeeID == UserStatic.EmployeeID).ToList();
             dataGridView1.DataSource = dto.Salaries;
             combofull = false;
             cmbPosition.DataSource = dto.Positions;
@@ -91,6 +93,14 @@ namespace PersonalTracking
             dataGridView1.Columns[10].Visible = false;
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
+            if (!UserStatic.isAdmin)
+            {
+                btnUpDate.Hide();
+                btnDelete.Hide();
+                btnNew.Location = new Point(342, 24);
+                btnClose.Location = new Point(461, 24);
+                panel3.Hide();
+            }
 
         }
 

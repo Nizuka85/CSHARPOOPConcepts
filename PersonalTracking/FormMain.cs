@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using DAL.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,10 +31,25 @@ namespace PersonalTracking
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormEmployeeList form = new FormEmployeeList();
-            this.Hide();
-            form.ShowDialog();
-            this.Visible = true;
+            if (!UserStatic.isAdmin)
+            {
+                EmployeeDTO dto = EmployeeBLL.GetAll();
+                EmployeeDetailDTO detail=dto.Employees.First(x=> x.EmployeeID == UserStatic.EmployeeID);
+                FormEmployee frm = new FormEmployee();
+                frm.detail = detail;
+                frm.isupdate = true;
+                frm.Hide();
+                frm.ShowDialog();
+                this.Visible = true;
+            }
+            else
+            {
+                FormEmployeeList form = new FormEmployeeList();
+                this.Hide();
+                form.ShowDialog();
+                this.Visible = true;
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -86,6 +103,17 @@ namespace PersonalTracking
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            if (!UserStatic.isAdmin)
+            {
+                btnDepartment.Visible = false;
+                btnPosition.Visible = false;
+                btnLogOut.Location = new Point(214, 189);
+                btnExit.Location = new Point(389, 189);
+            }
         }
     }
 }

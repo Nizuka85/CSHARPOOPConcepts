@@ -67,7 +67,14 @@ namespace PersonalTracking
                 imagepath=Application.StartupPath+ "\\images\\" + detail.ImagemPath;
                 txtImagePath.Text=imagepath;
                 pictureBox1.ImageLocation =imagepath;
-
+                if (!UserStatic.isAdmin)
+                {
+                    chAdmin.Enabled= false;
+                    txtUserNo.Enabled= false;
+                    txtSalary.Enabled= false;
+                    cmbDepartment.Enabled= false;
+                    cmbPosition.Enabled= false;
+                }
             }
         }
         bool combofull = false;

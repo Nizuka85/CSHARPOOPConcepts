@@ -360,6 +360,7 @@
             btnApprove.TabIndex = 0;
             btnApprove.Text = "Approve";
             btnApprove.UseVisualStyleBackColor = true;
+            btnApprove.Click += btnApprove_Click;
             // 
             // btnNew
             // 
