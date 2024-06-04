@@ -47,6 +47,7 @@
             btnUpDate = new Button();
             btnDelete = new Button();
             btnClose = new Button();
+            txtExcel = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -54,6 +55,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(txtExcel);
             panel1.Controls.Add(cmbPosition);
             panel1.Controls.Add(cmbDepartment);
             panel1.Controls.Add(btnClear);
@@ -262,6 +264,17 @@
             btnClose.UseVisualStyleBackColor = true;
             btnClose.Click += btnClose_Click;
             // 
+            // txtExcel
+            // 
+            txtExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtExcel.Location = new Point(561, 116);
+            txtExcel.Name = "txtExcel";
+            txtExcel.Size = new Size(127, 51);
+            txtExcel.TabIndex = 12;
+            txtExcel.Text = "Export";
+            txtExcel.UseVisualStyleBackColor = true;
+            txtExcel.Click += txtExcel_Click;
+            // 
             // FormEmployeeList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -302,5 +315,6 @@
         private Button btnClear;
         private ComboBox cmbPosition;
         private ComboBox cmbDepartment;
+        private Button txtExcel;
     }
 }

@@ -163,6 +163,12 @@ namespace PersonalTracking
                 MessageBox.Show("Employee was Deleted");
                 FillAllData();
                 CleanFilters();
-        }   }
+            }
+        }
+
+        private void txtExcel_Click(object sender, EventArgs e)
+        {
+            ExporToExcel.ExcelExport(dataGridView1);
+        }
     }
 }
