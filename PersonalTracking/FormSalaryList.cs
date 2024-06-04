@@ -57,8 +57,8 @@ namespace PersonalTracking
         void FillAllData()
         {
             dto = SalaryBLL.GetAll();
-            if(!UserStatic.isAdmin) 
-                dto.Salaries= dto.Salaries.Where(s => s.EmployeeID == UserStatic.EmployeeID).ToList();
+            if (!UserStatic.isAdmin)
+                dto.Salaries = dto.Salaries.Where(s => s.EmployeeID == UserStatic.EmployeeID).ToList();
             dataGridView1.DataSource = dto.Salaries;
             combofull = false;
             cmbPosition.DataSource = dto.Positions;
@@ -191,7 +191,12 @@ namespace PersonalTracking
                 MessageBox.Show("Salary was Deleted");
                 FillAllData();
                 CleanFillter();
-        }   }
+            }
+        }
 
+        private void txtExcel_Click(object sender, EventArgs e)
+        {
+            ExporToExcel.ExcelExport(dataGridView1);
+        }
     }
 }

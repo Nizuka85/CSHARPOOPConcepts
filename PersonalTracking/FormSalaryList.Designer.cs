@@ -59,6 +59,7 @@
             btnDelete = new Button();
             btnClose = new Button();
             dataGridView1 = new DataGridView();
+            txtExcel = new Button();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             // panel4
             // 
+            panel4.Controls.Add(txtExcel);
             panel4.Controls.Add(cmbMonth);
             panel4.Controls.Add(btnClear);
             panel4.Controls.Add(btnSearch);
@@ -411,6 +413,17 @@
             dataGridView1.TabIndex = 2;
             dataGridView1.RowEnter += dataGridView1_RowEnter;
             // 
+            // txtExcel
+            // 
+            txtExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtExcel.Location = new Point(429, 157);
+            txtExcel.Name = "txtExcel";
+            txtExcel.Size = new Size(127, 51);
+            txtExcel.TabIndex = 47;
+            txtExcel.Text = "Export";
+            txtExcel.UseVisualStyleBackColor = true;
+            txtExcel.Click += txtExcel_Click;
+            // 
             // FormSalaryList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -468,5 +481,6 @@
         private ComboBox cmbPosition;
         private ComboBox cmbDepartment;
         private ComboBox cmbMonth;
+        private Button txtExcel;
     }
 }

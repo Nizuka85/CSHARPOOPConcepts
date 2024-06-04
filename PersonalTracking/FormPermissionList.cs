@@ -103,7 +103,7 @@ namespace PersonalTracking
             dataGridView1.Columns[11].HeaderText = "State";
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
-            if(!UserStatic.isAdmin)
+            if (!UserStatic.isAdmin)
             {
                 pnlForAdmin.Visible = false;
                 btnApprove.Hide();
@@ -216,12 +216,17 @@ namespace PersonalTracking
                     MessageBox.Show("you cannot delete approved or disapproved permissions");
                 else
                 {
-                 PermissionBLL.DeletePermission(detail.PermissionID);
+                    PermissionBLL.DeletePermission(detail.PermissionID);
                     MessageBox.Show("Permission was deleted");
                     FillAllData();
-                    CleanFilters() ;
-                }                
+                    CleanFilters();
+                }
             }
+        }
+
+        private void txtExcel_Click(object sender, EventArgs e)
+        {
+            ExporToExcel.ExcelExport(dataGridView1);
         }
     }
 }

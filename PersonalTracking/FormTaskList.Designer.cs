@@ -60,6 +60,7 @@
             btnDelete = new Button();
             btnClose = new Button();
             dataGridView1 = new DataGridView();
+            txtExcel = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(txtExcel);
             panel3.Controls.Add(cmbTaskState);
             panel3.Controls.Add(btnClear);
             panel3.Controls.Add(btnSearch);
@@ -423,6 +425,17 @@
             dataGridView1.TabIndex = 2;
             dataGridView1.RowEnter += dataGridView1_RowEnter;
             // 
+            // txtExcel
+            // 
+            txtExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtExcel.Location = new Point(29, 183);
+            txtExcel.Name = "txtExcel";
+            txtExcel.Size = new Size(127, 51);
+            txtExcel.TabIndex = 33;
+            txtExcel.Text = "Export";
+            txtExcel.UseVisualStyleBackColor = true;
+            txtExcel.Click += txtExcel_Click;
+            // 
             // FormTaskList
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -482,5 +495,6 @@
         private ComboBox cmbDepartment;
         private ComboBox cmbPosition;
         private ComboBox cmbTaskState;
+        private Button txtExcel;
     }
 }

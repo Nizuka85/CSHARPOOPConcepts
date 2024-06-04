@@ -118,7 +118,7 @@ namespace PersonalTracking
             {
                 btnNew.Visible = false;
                 btnUpDate.Visible = false;
-                btnDelete.Visible = false;               
+                btnDelete.Visible = false;
                 pnlForAdmin.Hide();
                 btnApprove.Text = "Delivery";
 
@@ -234,6 +234,11 @@ namespace PersonalTracking
                 CleanFilter();
             }
 
+        }
+
+        private void txtExcel_Click(object sender, EventArgs e)
+        {
+            ExporToExcel.ExcelExport(dataGridView1);
         }
     }
 }
