@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -37,22 +37,23 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnOK);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 457);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(832, 95);
             this.panel1.TabIndex = 0;
             // 
-            // btnDelete
+            // btnOK
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(308, 8);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(195, 79);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "OK";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.Location = new System.Drawing.Point(308, 8);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(195, 79);
+            this.btnOK.TabIndex = 1;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // dataGridView1
             // 
@@ -86,7 +87,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

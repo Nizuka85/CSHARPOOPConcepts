@@ -120,6 +120,12 @@
     <Compile Include="FrmDeleted.Designer.cs">
       <DependentUpon>FrmDeleted.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     <EmbeddedResource Include="FrmDeleted.resx">
       <DependentUpon>FrmDeleted.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProduct.resx">
       <DependentUpon>FrmProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +203,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="DAL\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -227,6 +237,21 @@
       <DependentUpon>DataModel.edmx</DependentUpon>
       <LastGenOutput>DataModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\account-logout-64.ico" />
+    <Content Include="Resources\agreement_6091741.png" />
+    <Content Include="Resources\chart-64.ico" />
+    <Content Include="Resources\chart-641.ico" />
+    <Content Include="Resources\conversation_3050431.png" />
+    <Content Include="Resources\exit-64.ico" />
+    <Content Include="Resources\medal-3-64.ico" />
+    <Content Include="Resources\money-2-64.ico" />
+    <Content Include="Resources\money-bag-64.ico" />
+    <Content Include="Resources\network-64.ico" />
+    <Content Include="Resources\organization-64.ico" />
+    <Content Include="Resources\parallel-tasks-64.ico" />
+    <Content Include="Resources\search_2168773.png" />
+    <Content Include="Resources\shopping-bag-2-64.ico" />
+    <Content Include="Resources\workers-64.ico" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

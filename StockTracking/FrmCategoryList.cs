@@ -19,7 +19,10 @@ namespace StockTracking
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            FrmCategory frm = new FrmCategory();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

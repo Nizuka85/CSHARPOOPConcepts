@@ -36,5 +36,13 @@ namespace StockTracking
         {
             e.Handled = General.isNumber(e);
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmSales frm = new FrmSales();
+            this.Hide();
+            frm.ShowDialog();
+            this.Visible = true;
+        }
     }
 }

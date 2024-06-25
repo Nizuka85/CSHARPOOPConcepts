@@ -36,5 +36,11 @@ namespace StockTracking
         {
 
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmProduct frm = new FrmProduct();
+
+        }
     }
 }
