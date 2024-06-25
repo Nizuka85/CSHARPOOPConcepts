@@ -31,5 +31,10 @@ namespace StockTracking
         {
             e.Handled = General.isNumber(e);
         }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

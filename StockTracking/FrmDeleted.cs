@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StockTracking
 {
-    public partial class FrmSales : Form
+    public partial class FrmDeleted : Form
     {
-        public FrmSales()
+        public FrmDeleted()
         {
             InitializeComponent();
         }
@@ -22,19 +22,17 @@ namespace StockTracking
 
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void FrmDeleted_Load(object sender, EventArgs e)
         {
-
+            cmbDeletedData.Items.Add("Category");
+            cmbDeletedData.Items.Add("Product");
+            cmbDeletedData.Items.Add("Customer");
+            cmbDeletedData.Items.Add("Sales");
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = General.isNumber(e);
         }
     }
 }
