@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StockTracking.BLL;
+using StockTracking.DAL.DTO;
 
 namespace StockTracking
 {
@@ -20,6 +22,27 @@ namespace StockTracking
         private void btnClose_Click(object sender, EventArgs e)
         {
             this .Close();
+        }
+        CategoryBLL bll = new CategoryBLL();
+        private void FrmCategory_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtCategoryName.Text.Trim() == "")
+                MessageBox.Show("Category Name is Empty");
+            else
+            {
+                CategoryDetailDTO category = new CategoryDetailDTO();
+                category.CategoryName = txtCategoryName.Text;
+                if(bll.Insert(category))
+                {
+                    MessageBox.Show("Category was added");
+                    txtCategoryName.Clear();
+                }
+            }
         }
     }
 }

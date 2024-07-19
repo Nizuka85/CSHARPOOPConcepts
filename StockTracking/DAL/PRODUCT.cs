@@ -20,5 +20,6 @@ namespace StockTracking.DAL
         public int StockAmount { get; set; }
         public bool isDeleted { get; set; }
         public Nullable<System.DateTime> DeletedDate { get; set; }
+        public int Price { get; set; }
     }
 }
