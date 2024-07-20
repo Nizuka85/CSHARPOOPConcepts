@@ -34,12 +34,12 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.chDate = new System.Windows.Forms.CheckBox();
+            this.dpStart = new System.Windows.Forms.DateTimePicker();
+            this.dpEnd = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtProductName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClean = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCategoryName = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
@@ -123,12 +123,12 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.dateTimePicker3);
-            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.chDate);
+            this.panel1.Controls.Add(this.dpStart);
+            this.panel1.Controls.Add(this.dpEnd);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtProductName);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnClean);
             this.panel1.Controls.Add(this.btnSearch);
@@ -140,7 +140,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cmbCategory);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtCategoryName);
+            this.panel1.Controls.Add(this.txtCustomerName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -148,32 +148,32 @@
             this.panel1.Size = new System.Drawing.Size(1155, 220);
             this.panel1.TabIndex = 0;
             // 
-            // checkBox1
+            // chDate
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(768, 170);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(79, 29);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Date";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chDate.AutoSize = true;
+            this.chDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chDate.Location = new System.Drawing.Point(768, 170);
+            this.chDate.Name = "chDate";
+            this.chDate.Size = new System.Drawing.Size(79, 29);
+            this.chDate.TabIndex = 9;
+            this.chDate.Text = "Date";
+            this.chDate.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker3
+            // dpStart
             // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Location = new System.Drawing.Point(206, 169);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(249, 30);
-            this.dateTimePicker3.TabIndex = 7;
+            this.dpStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpStart.Location = new System.Drawing.Point(206, 169);
+            this.dpStart.Name = "dpStart";
+            this.dpStart.Size = new System.Drawing.Size(249, 30);
+            this.dpStart.TabIndex = 7;
             // 
-            // dateTimePicker2
+            // dpEnd
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(505, 170);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(249, 30);
-            this.dateTimePicker2.TabIndex = 8;
+            this.dpEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpEnd.Location = new System.Drawing.Point(505, 170);
+            this.dpEnd.Name = "dpEnd";
+            this.dpEnd.Size = new System.Drawing.Size(249, 30);
+            this.dpEnd.TabIndex = 8;
             // 
             // label7
             // 
@@ -195,13 +195,13 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "SalesDate From";
             // 
-            // textBox1
+            // txtProductName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(194, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 30);
-            this.textBox1.TabIndex = 3;
+            this.txtProductName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductName.Location = new System.Drawing.Point(194, 53);
+            this.txtProductName.Name = "txtProductName";
+            this.txtProductName.Size = new System.Drawing.Size(226, 30);
+            this.txtProductName.TabIndex = 3;
             // 
             // label5
             // 
@@ -222,6 +222,7 @@
             this.btnClean.TabIndex = 11;
             this.btnClean.Text = "Clean";
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // btnSearch
             // 
@@ -232,6 +233,7 @@
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // groupBox2
             // 
@@ -383,19 +385,19 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Category";
             // 
-            // txtCategoryName
+            // txtCustomerName
             // 
-            this.txtCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoryName.Location = new System.Drawing.Point(187, 12);
-            this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(233, 30);
-            this.txtCategoryName.TabIndex = 0;
+            this.txtCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerName.Location = new System.Drawing.Point(194, 12);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(226, 30);
+            this.txtCustomerName.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 17);
+            this.label1.Location = new System.Drawing.Point(15, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(167, 25);
             this.label1.TabIndex = 8;
@@ -423,6 +425,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "FrmSaleList";
             this.Text = "Sale List";
+            this.Load += new System.EventHandler(this.FrmSaleList_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -459,15 +462,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbCategory;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCategoryName;
+        private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dpStart;
+        private System.Windows.Forms.DateTimePicker dpEnd;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chDate;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

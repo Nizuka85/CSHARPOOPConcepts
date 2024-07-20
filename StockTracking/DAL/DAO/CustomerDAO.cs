@@ -46,9 +46,11 @@ namespace StockTracking.DAL.DAO
                 var list= db.CUSTOMERs;
                 foreach ( var item in list )
                 {
-                    CustomerDetailDTO dto=new CustomerDetailDTO();
-                    dto.CustomerName = item.CustomerName;
-                    dto.ID = item.ID;
+                    CustomerDetailDTO dto = new CustomerDetailDTO
+                    {
+                        CustomerName = item.CustomerName,
+                        ID = item.ID
+                    };
                     customers.Add(dto);
                 }
                 return customers;
